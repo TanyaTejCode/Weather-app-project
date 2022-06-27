@@ -1,18 +1,18 @@
-.weather-app {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1px solid #f8b400;
-  border-radius: 10px;
-}
 a {
-  color: #f8b400;
+  color: hsl(44, 100%, 49%);
+  text-decoration: none;
 }
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
   color: #004445;
+}
+.all-page {
+  max-width: 600px;
+  margin: 30px auto;
+  font-size: 14px;
 }
 .city {
   font-weight: 700;
@@ -26,4 +26,9 @@ ul {
 .units {
   position: relative;
   top: -15px;
+}
+.weather-app {
+  padding: 20px;
+  border: 1px solid #f8b400;
+  border-radius: 10px;
 }
