@@ -1,8 +1,30 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   let minutes = date.getMinutes();
-  let day = date.getDay();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[date.getMonth()];
+  let day = date.getDate();
+  return `${month} ${day}, ${hours}:${minutes}`;
 }
 
 function displayTemperature(response) {
