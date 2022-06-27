@@ -1,3 +1,29 @@
-h1 {
-  color: blue;
+.weather-app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #f8b400;
+  border-radius: 10px;
+}
+a {
+  color: #f8b400;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #004445;
+}
+.city {
+  font-weight: 700;
+  font-size: 30px;
+}
+.temperature {
+  font-size: 40px;
+  font-weight: 700;
+  color: #004445;
+}
+.units {
+  position: relative;
+  top: -15px;
 }

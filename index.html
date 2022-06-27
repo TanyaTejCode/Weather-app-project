@@ -15,30 +15,42 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <ul>
-            <li>Riga</li>
-            <li>June 26, 12:00</li>
-            <li>Clear sky</li>
-            <li>29 °C | °F</li>
-          </ul>
+      <div class="weather-app">
+        <div class="row">
+          <div class="col-6">
+            <ul>
+              <li class="city">Riga</li>
+              <li>June 26, 12:00</li>
+              <li>Clear sky</li>
+              <li>
+                <span class="temperature">29</span>
+                <span class="units">°C | °F</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>
+                <img
+                  class="weatherIcon"
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt=""
+                />
+              </li>
+              <li>Precipitation: 0%</li>
+              <li>Humidity: 41%</li>
+              <li>Wind: 11 km/h</li>
+            </ul>
+          </div>
         </div>
-        <div class="col-6">
-          <ul>
-            <li>
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                alt=""
-              />
-            </li>
-            <li>Precipitation: 0%</li>
-            <li>Humidity: 41%</li>
-            <li>Wind: 11 km/h</li>
-          </ul>
-        </div>
+        <small>
+          <a href="https://github.com/TanyaTejCode/Weather-app-project"
+            >Open-source code</a
+          >
+          by Tanya Tej
+        </small>
       </div>
-      <script src="src/app.js"></script>
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>
