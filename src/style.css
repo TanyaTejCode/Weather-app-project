@@ -32,3 +32,6 @@ ul {
   border: 1px solid #f8b400;
   border-radius: 10px;
 }
+#description {
+  text-transform: capitalize;
+}
