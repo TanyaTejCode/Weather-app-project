@@ -47,8 +47,17 @@ function displayTemperature(response) {
   );
   icon.setAttribute("alt", response.data.weather[0].description);
 }
-let apiKey = "ec60a7f865c1bc2ca6ffb4f631d54c2d";
-let city = "riga";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "ec60a7f865c1bc2ca6ffb4f631d54c2d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+search("new york");
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

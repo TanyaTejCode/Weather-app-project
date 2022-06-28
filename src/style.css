@@ -9,7 +9,7 @@ ul {
   color: #004445;
 }
 .all-page {
-  max-width: 600px;
+  max-width: 500px;
   margin: 30px auto;
   font-size: 14px;
 }
@@ -34,7 +34,10 @@ ul {
   border: 1px solid #f8b400;
   border-radius: 10px;
 }
-
+#button {
+  background-color: #f8b400;
+  border: 1px solid #f8b400;
+}
 #description {
   text-transform: capitalize;
 }
