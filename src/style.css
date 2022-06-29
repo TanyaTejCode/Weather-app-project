@@ -8,6 +8,14 @@ ul {
   margin: 0;
   color: #004445;
 }
+.active {
+  color: #004445;
+  cursor: default;
+}
+.active:hover {
+  color: #004445;
+  text-decoration: none;
+}
 .all-page {
   max-width: 500px;
   margin: 30px auto;

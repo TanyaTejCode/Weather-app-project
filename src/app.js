@@ -26,10 +26,10 @@ function formatDate(timestamp) {
   let day = date.getDate();
   return `${month} ${day}, ${hours}:${minutes}`;
 }
-
 function displayTemperature(response) {
+  celsiusTemperature = response.data.main.temp;
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  temperature.innerHTML = Math.round(celsiusTemperature);
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
   let description = document.querySelector("#description");
@@ -47,7 +47,6 @@ function displayTemperature(response) {
   );
   icon.setAttribute("alt", response.data.weather[0].description);
 }
-
 function search(city) {
   let apiKey = "ec60a7f865c1bc2ca6ffb4f631d54c2d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -58,6 +57,26 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-search("new york");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+function showFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+let celsiusTemperature = null;
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheit);
+function showCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsius);
+search("new york");
