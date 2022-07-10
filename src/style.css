@@ -1,25 +1,19 @@
 a {
-  color: hsl(44, 100%, 49%);
+  color: #ec6e4c;
   text-decoration: none;
 }
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  color: #004445;
-}
-.active {
-  color: #004445;
-  cursor: default;
-}
-.active:hover {
-  color: #004445;
-  text-decoration: none;
 }
 .all-page {
   max-width: 500px;
   margin: 30px auto;
   font-size: 14px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #004445;
 }
 .city {
   font-weight: 700;
@@ -27,25 +21,34 @@ ul {
 }
 .description {
   font-size: 12px;
+  position: relative;
+  left: 15px;
+  top: -15px;
 }
+.form-control {
+  border: 1px solid #004445;
+}
+.form-control:focus {
+  box-shadow: none;
+  border: 1px solid #d9ac9f;
+}
+
 .temperature {
   font-size: 40px;
   font-weight: 700;
-  color: #004445;
 }
 .units {
   position: relative;
-  top: -15px;
+  top: -20px;
 }
 .weather-app {
   padding: 20px;
-  border: 1px solid #f8b400;
+  border: 1.7px solid #f4ae9a;
   border-radius: 10px;
 }
 .weather-forecast {
   margin-top: 15px;
   text-align: center;
-  color: #004445;
 }
 .weather-forecast-day {
   font-size: 15px;
@@ -59,9 +62,21 @@ ul {
   opacity: 0.5;
 }
 #button {
-  background-color: #f8b400;
-  border: 1px solid #f8b400;
+  background-color: #ec6e4c;
+  border: 1px solid #ec6e4c;
+  transition: all 200ms ease-in-out;
+}
+
+#button:hover {
+  background-color: #004445;
+  border: 1px solid #004445;
+}
+#button:focus {
+  box-shadow: none;
 }
 #description {
   text-transform: capitalize;
+}
+#icon {
+  width: 110px;
 }
