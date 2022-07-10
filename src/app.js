@@ -42,7 +42,7 @@ function displayTemperature(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = ` ${response.data.main.humidity}`;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = ` ${response.data.wind.speed} `;
+  wind.innerHTML = ` ${Math.round(response.data.wind.speed)} `;
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let icon = document.querySelector("#icon");
@@ -65,26 +65,6 @@ function handleSubmit(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-function showFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-let celsiusTemperature = null;
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheit);
-
-function showCelsius(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -129,6 +109,4 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsius);
 search("new york");
