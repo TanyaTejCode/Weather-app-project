@@ -51,12 +51,12 @@ ul {
   text-align: center;
 }
 .weather-forecast-day {
-  font-size: 15px;
+  font-size: 14px;
   opacity: 0.5;
   font-weight: 450;
 }
 .weather-forecast-temperature {
-  font-size: 13px;
+  font-size: 12px;
 }
 .weather-forecast-temperature-min {
   opacity: 0.5;
@@ -64,6 +64,7 @@ ul {
 #button {
   background-color: #ec6e4c;
   border: 1px solid #ec6e4c;
+  width: 80px;
   transition: all 200ms ease-in-out;
 }
 
